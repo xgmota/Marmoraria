@@ -54,11 +54,27 @@ namespace Marmoraria
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection Conexao = new MySqlConnection("Server=127.0.0.1,Port=3306;Database=clientes;User=root;Password=486520"))
+            using (MySqlConnection Conexao = new MySqlConnection("Server=127.0.0.1,Port=3306;Database=banco_de_dados_marmoraria;User=root;Password=486520"))
 
             {
                 Conexao.Open();
-                MessageBox.Show("Ok");
+
+                using (MySqlCommand cmd = Conexao.CreateCommand())
+                {
+                    cmd.CommandText = "INSERT INTO clientes (nome, telefone, documento, rua, numero, bairro, cidade, observacoes) VALUES (@nome, @telefone, @documento, @rua, @numero, @bairro, @cidade, @observacoes)";
+                    
+                    cmd.Parameters.AddWithValue("@nome", textBoxNome.Text);
+                    cmd.Parameters.AddWithValue("@telefone", textBoxTelefone.Text);
+                    cmd.Parameters.AddWithValue("@documento", textBoxDocumento.Text);
+                    cmd.Parameters.AddWithValue("@rua", textBoxRua.Text);
+                    cmd.Parameters.AddWithValue("@numero", textBoxNumero.Text);
+                    cmd.Parameters.AddWithValue("@bairro", textBoxBairro.Text);
+                    cmd.Parameters.AddWithValue("@cidade", textBoxCidade.Text);
+                    cmd.Parameters.AddWithValue("@observacoes", textBoxObs.Text);
+
+                    cmd.ExecuteNonQuery();
+                }
+                // MessageBox.Show("Ok");
             }
         }
     }

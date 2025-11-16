@@ -30,27 +30,27 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroClientes));
             label1 = new Label();
-            textBox1 = new TextBox();
+            textBoxNome = new TextBox();
             label4 = new Label();
             label6 = new Label();
             label7 = new Label();
             groupBox2 = new GroupBox();
-            textBox5 = new TextBox();
+            textBoxCidade = new TextBox();
             label2 = new Label();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            textBoxBairro = new TextBox();
+            textBoxNumero = new TextBox();
+            textBoxRua = new TextBox();
             label8 = new Label();
             label9 = new Label();
             groupBox1 = new GroupBox();
             label3 = new Label();
-            textBox6 = new TextBox();
-            maskedTextBox2 = new MaskedTextBox();
-            maskedTextBox1 = new MaskedTextBox();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
-            textBox8 = new TextBox();
+            textBoxCodigo = new TextBox();
+            textBoxDocumento = new MaskedTextBox();
+            textBoxTelefone = new MaskedTextBox();
+            OpCPF = new RadioButton();
+            textBoxObs = new TextBox();
             button1 = new Button();
+            OpCNPJ = new RadioButton();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -65,12 +65,12 @@
             label1.Text = "Nome";
             label1.Click += label1_Click_1;
             // 
-            // textBox1
+            // textBoxNome
             // 
-            textBox1.Location = new Point(6, 43);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(438, 26);
-            textBox1.TabIndex = 1;
+            textBoxNome.Location = new Point(6, 43);
+            textBoxNome.Name = "textBoxNome";
+            textBoxNome.Size = new Size(438, 26);
+            textBoxNome.TabIndex = 1;
             // 
             // label4
             // 
@@ -101,11 +101,11 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox5);
+            groupBox2.Controls.Add(textBoxCidade);
             groupBox2.Controls.Add(label2);
-            groupBox2.Controls.Add(textBox4);
-            groupBox2.Controls.Add(textBox3);
-            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(textBoxBairro);
+            groupBox2.Controls.Add(textBoxNumero);
+            groupBox2.Controls.Add(textBoxRua);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(label4);
@@ -117,12 +117,13 @@
             groupBox2.Text = "Endereço";
             groupBox2.Enter += groupBox1_Enter;
             // 
-            // textBox5
+            // textBoxCidade
             // 
-            textBox5.Location = new Point(334, 105);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(110, 26);
-            textBox5.TabIndex = 10;
+            textBoxCidade.Location = new Point(334, 105);
+            textBoxCidade.Name = "textBoxCidade";
+            textBoxCidade.Size = new Size(110, 26);
+            textBoxCidade.TabIndex = 10;
+            textBoxCidade.Text = "Tatuí";
             // 
             // label2
             // 
@@ -133,26 +134,26 @@
             label2.TabIndex = 9;
             label2.Text = "Cidade";
             // 
-            // textBox4
+            // textBoxBairro
             // 
-            textBox4.Location = new Point(6, 105);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(322, 26);
-            textBox4.TabIndex = 5;
+            textBoxBairro.Location = new Point(6, 105);
+            textBoxBairro.Name = "textBoxBairro";
+            textBoxBairro.Size = new Size(322, 26);
+            textBoxBairro.TabIndex = 5;
             // 
-            // textBox3
+            // textBoxNumero
             // 
-            textBox3.Location = new Point(334, 51);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(110, 26);
-            textBox3.TabIndex = 4;
+            textBoxNumero.Location = new Point(334, 51);
+            textBoxNumero.Name = "textBoxNumero";
+            textBoxNumero.Size = new Size(110, 26);
+            textBoxNumero.TabIndex = 4;
             // 
-            // textBox2
+            // textBoxRua
             // 
-            textBox2.Location = new Point(6, 51);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(322, 26);
-            textBox2.TabIndex = 3;
+            textBoxRua.Location = new Point(6, 51);
+            textBoxRua.Name = "textBoxRua";
+            textBoxRua.Size = new Size(322, 26);
+            textBoxRua.TabIndex = 3;
             // 
             // label8
             // 
@@ -177,13 +178,13 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(textBox6);
-            groupBox1.Controls.Add(maskedTextBox2);
-            groupBox1.Controls.Add(maskedTextBox1);
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Controls.Add(radioButton1);
+            groupBox1.Controls.Add(textBoxCodigo);
+            groupBox1.Controls.Add(textBoxDocumento);
+            groupBox1.Controls.Add(textBoxTelefone);
+            groupBox1.Controls.Add(OpCNPJ);
+            groupBox1.Controls.Add(OpCPF);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(textBoxNome);
             groupBox1.Controls.Add(label6);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
@@ -201,61 +202,52 @@
             label3.TabIndex = 15;
             label3.Text = "Código";
             // 
-            // textBox6
+            // textBoxCodigo
             // 
-            textBox6.Location = new Point(363, 102);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(78, 26);
-            textBox6.TabIndex = 5;
-            textBox6.TabStop = false;
+            textBoxCodigo.Location = new Point(363, 102);
+            textBoxCodigo.Name = "textBoxCodigo";
+            textBoxCodigo.Size = new Size(78, 26);
+            textBoxCodigo.TabIndex = 5;
+            textBoxCodigo.TabStop = false;
             // 
-            // maskedTextBox2
+            // textBoxDocumento
             // 
-            maskedTextBox2.Location = new Point(117, 102);
-            maskedTextBox2.Mask = "000,000,000-00";
-            maskedTextBox2.Name = "maskedTextBox2";
-            maskedTextBox2.Size = new Size(105, 26);
-            maskedTextBox2.TabIndex = 4;
-            maskedTextBox2.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            textBoxDocumento.Location = new Point(117, 102);
+            textBoxDocumento.Mask = "000,000,000-00";
+            textBoxDocumento.Name = "textBoxDocumento";
+            textBoxDocumento.Size = new Size(105, 26);
+            textBoxDocumento.TabIndex = 4;
+            textBoxDocumento.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
-            // maskedTextBox1
+            // textBoxTelefone
             // 
-            maskedTextBox1.Location = new Point(6, 102);
-            maskedTextBox1.Mask = "(00) 00000-0000";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(105, 26);
-            maskedTextBox1.TabIndex = 2;
-            maskedTextBox1.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            textBoxTelefone.Location = new Point(6, 102);
+            textBoxTelefone.Mask = "(00) 00000-0000";
+            textBoxTelefone.Name = "textBoxTelefone";
+            textBoxTelefone.Size = new Size(105, 26);
+            textBoxTelefone.TabIndex = 2;
+            textBoxTelefone.Text = "15";
+            textBoxTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
-            // radioButton2
+            // OpCPF
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(166, 79);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(56, 22);
-            radioButton2.TabIndex = 100;
-            radioButton2.Text = "CNPJ";
-            radioButton2.UseVisualStyleBackColor = true;
+            OpCPF.AutoSize = true;
+            OpCPF.Checked = true;
+            OpCPF.Location = new Point(117, 79);
+            OpCPF.Name = "OpCPF";
+            OpCPF.Size = new Size(49, 22);
+            OpCPF.TabIndex = 3;
+            OpCPF.TabStop = true;
+            OpCPF.Text = "CPF";
+            OpCPF.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // textBoxObs
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Checked = true;
-            radioButton1.Location = new Point(117, 79);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(49, 22);
-            radioButton1.TabIndex = 3;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "CPF";
-            radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(12, 361);
-            textBox8.Multiline = true;
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(444, 86);
-            textBox8.TabIndex = 11;
+            textBoxObs.Location = new Point(12, 361);
+            textBoxObs.Multiline = true;
+            textBoxObs.Name = "textBoxObs";
+            textBoxObs.Size = new Size(444, 86);
+            textBoxObs.TabIndex = 11;
             // 
             // button1
             // 
@@ -274,6 +266,16 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // OpCNPJ
+            // 
+            OpCNPJ.AutoSize = true;
+            OpCNPJ.Location = new Point(166, 79);
+            OpCNPJ.Name = "OpCNPJ";
+            OpCNPJ.Size = new Size(56, 22);
+            OpCNPJ.TabIndex = 100;
+            OpCNPJ.Text = "CNPJ";
+            OpCNPJ.UseVisualStyleBackColor = true;
+            // 
             // FrmCadastroClientes
             // 
             AutoScaleDimensions = new SizeF(8F, 18F);
@@ -281,7 +283,7 @@
             BackColor = Color.White;
             ClientSize = new Size(474, 501);
             Controls.Add(button1);
-            Controls.Add(textBox8);
+            Controls.Add(textBoxObs);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
             Controls.Add(label7);
@@ -308,26 +310,26 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
+        private TextBox textBoxNome;
         private Label label4;
         private Label label6;
         private Label label7;
         private GroupBox groupBox1;
         private Label label8;
         private Label label9;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox5;
+        private TextBox textBoxNumero;
+        private TextBox textBoxRua;
+        private TextBox textBoxCidade;
         private Label label2;
-        private TextBox textBox4;
+        private TextBox textBoxBairro;
         private GroupBox groupBox2;
-        private TextBox textBox8;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
-        private MaskedTextBox maskedTextBox2;
-        private MaskedTextBox maskedTextBox1;
+        private TextBox textBoxObs;
+        private RadioButton OpCPF;
+        private MaskedTextBox textBoxDocumento;
+        private MaskedTextBox textBoxTelefone;
         private Button button1;
         private Label label3;
-        private TextBox textBox6;
+        private TextBox textBoxCodigo;
+        private RadioButton OpCNPJ;
     }
 }
