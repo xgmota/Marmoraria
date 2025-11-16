@@ -62,11 +62,20 @@ namespace Marmoraria
                 using (MySqlCommand cmd = Conexao.CreateCommand())
                 {
                     cmd.CommandText = "INSERT INTO clientes (nome, telefone, documento, rua, numero, bairro, cidade, observacoes) VALUES (@nome, @telefone, @documento, @rua, @numero, @bairro, @cidade, @observacoes)";
+
+                    int num;
+                    if (textBoxNumero.Text == "")
+                    {
+                        num = 0;
+                    } else
+                    {
+                        num =int.Parse(textBoxNumero.Text);
+                    }
                     
                     cmd.Parameters.AddWithValue("@nome", textBoxNome.Text);
                     cmd.Parameters.AddWithValue("@telefone", textBoxTelefone.Text);
                     cmd.Parameters.AddWithValue("@documento", textBoxDocumento.Text);
-                    cmd.Parameters.AddWithValue("@rua", textBoxRua.Text);
+                    cmd.Parameters.AddWithValue("@rua", num);
                     cmd.Parameters.AddWithValue("@numero", textBoxNumero.Text);
                     cmd.Parameters.AddWithValue("@bairro", textBoxBairro.Text);
                     cmd.Parameters.AddWithValue("@cidade", textBoxCidade.Text);
