@@ -1,6 +1,6 @@
 ﻿namespace Marmoraria
 {
-    partial class Form1
+    partial class FrmCadastroClientes
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroClientes));
             label1 = new Label();
             textBox1 = new TextBox();
             label4 = new Label();
@@ -43,11 +43,14 @@
             label8 = new Label();
             label9 = new Label();
             groupBox1 = new GroupBox();
+            label3 = new Label();
+            textBox6 = new TextBox();
             maskedTextBox2 = new MaskedTextBox();
             maskedTextBox1 = new MaskedTextBox();
             radioButton2 = new RadioButton();
             radioButton1 = new RadioButton();
             textBox8 = new TextBox();
+            button1 = new Button();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -109,7 +112,7 @@
             groupBox2.Location = new Point(12, 170);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(450, 147);
-            groupBox2.TabIndex = 8;
+            groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Endereço";
             groupBox2.Enter += groupBox1_Enter;
@@ -173,6 +176,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(textBox6);
             groupBox1.Controls.Add(maskedTextBox2);
             groupBox1.Controls.Add(maskedTextBox1);
             groupBox1.Controls.Add(radioButton2);
@@ -183,9 +188,26 @@
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(450, 152);
-            groupBox1.TabIndex = 9;
+            groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Dados Pessoais";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(363, 83);
+            label3.Name = "label3";
+            label3.Size = new Size(51, 18);
+            label3.TabIndex = 15;
+            label3.Text = "Código";
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(363, 102);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(78, 26);
+            textBox6.TabIndex = 5;
+            textBox6.TabStop = false;
             // 
             // maskedTextBox2
             // 
@@ -193,7 +215,7 @@
             maskedTextBox2.Mask = "000,000,000-00";
             maskedTextBox2.Name = "maskedTextBox2";
             maskedTextBox2.Size = new Size(105, 26);
-            maskedTextBox2.TabIndex = 13;
+            maskedTextBox2.TabIndex = 4;
             maskedTextBox2.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // maskedTextBox1
@@ -202,7 +224,7 @@
             maskedTextBox1.Mask = "(00) 00000-0000";
             maskedTextBox1.Name = "maskedTextBox1";
             maskedTextBox1.Size = new Size(105, 26);
-            maskedTextBox1.TabIndex = 12;
+            maskedTextBox1.TabIndex = 2;
             maskedTextBox1.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // radioButton2
@@ -211,7 +233,7 @@
             radioButton2.Location = new Point(166, 79);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(56, 22);
-            radioButton2.TabIndex = 10;
+            radioButton2.TabIndex = 100;
             radioButton2.Text = "CNPJ";
             radioButton2.UseVisualStyleBackColor = true;
             // 
@@ -222,7 +244,7 @@
             radioButton1.Location = new Point(117, 79);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(49, 22);
-            radioButton1.TabIndex = 9;
+            radioButton1.TabIndex = 3;
             radioButton1.TabStop = true;
             radioButton1.Text = "CPF";
             radioButton1.UseVisualStyleBackColor = true;
@@ -235,12 +257,29 @@
             textBox8.Size = new Size(444, 86);
             textBox8.TabIndex = 11;
             // 
-            // Form1
+            // button1
+            // 
+            button1.BackColor = SystemColors.MenuHighlight;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(375, 453);
+            button1.Name = "button1";
+            button1.Size = new Size(81, 36);
+            button1.TabIndex = 12;
+            button1.Text = "Salvar";
+            button1.TextAlign = ContentAlignment.MiddleRight;
+            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // FrmCadastroClientes
             // 
             AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(474, 501);
+            Controls.Add(button1);
             Controls.Add(textBox8);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
@@ -248,13 +287,15 @@
             Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "Form1";
+            Name = "FrmCadastroClientes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Clientes";
             Load += Form1_Load;
+            KeyDown += FrmCadastroClientes_KeyDown;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -284,5 +325,8 @@
         private RadioButton radioButton1;
         private MaskedTextBox maskedTextBox2;
         private MaskedTextBox maskedTextBox1;
+        private Button button1;
+        private Label label3;
+        private TextBox textBox6;
     }
 }

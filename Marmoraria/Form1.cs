@@ -1,8 +1,8 @@
 namespace Marmoraria
 {
-    public partial class Form1 : Form
+    public partial class FrmCadastroClientes : Form
     {
-        public Form1()
+        public FrmCadastroClientes()
         {
             InitializeComponent();
         }
@@ -35,6 +35,15 @@ namespace Marmoraria
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmCadastroClientes_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) 
+            {
+                SendKeys.Send("{TAB}");
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }
