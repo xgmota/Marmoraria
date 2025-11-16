@@ -47,10 +47,10 @@
             textBoxCodigo = new TextBox();
             textBoxDocumento = new MaskedTextBox();
             textBoxTelefone = new MaskedTextBox();
+            OpCNPJ = new RadioButton();
             OpCPF = new RadioButton();
             textBoxObs = new TextBox();
-            button1 = new Button();
-            OpCNPJ = new RadioButton();
+            btSalvar = new Button();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -229,6 +229,16 @@
             textBoxTelefone.Text = "15";
             textBoxTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
+            // OpCNPJ
+            // 
+            OpCNPJ.AutoSize = true;
+            OpCNPJ.Location = new Point(166, 79);
+            OpCNPJ.Name = "OpCNPJ";
+            OpCNPJ.Size = new Size(56, 22);
+            OpCNPJ.TabIndex = 100;
+            OpCNPJ.Text = "CNPJ";
+            OpCNPJ.UseVisualStyleBackColor = true;
+            // 
             // OpCPF
             // 
             OpCPF.AutoSize = true;
@@ -249,32 +259,22 @@
             textBoxObs.Size = new Size(444, 86);
             textBoxObs.TabIndex = 11;
             // 
-            // button1
+            // btSalvar
             // 
-            button1.BackColor = SystemColors.MenuHighlight;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(375, 453);
-            button1.Name = "button1";
-            button1.Size = new Size(81, 36);
-            button1.TabIndex = 12;
-            button1.Text = "Salvar";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // OpCNPJ
-            // 
-            OpCNPJ.AutoSize = true;
-            OpCNPJ.Location = new Point(166, 79);
-            OpCNPJ.Name = "OpCNPJ";
-            OpCNPJ.Size = new Size(56, 22);
-            OpCNPJ.TabIndex = 100;
-            OpCNPJ.Text = "CNPJ";
-            OpCNPJ.UseVisualStyleBackColor = true;
+            btSalvar.BackColor = SystemColors.MenuHighlight;
+            btSalvar.FlatAppearance.BorderSize = 0;
+            btSalvar.FlatStyle = FlatStyle.Flat;
+            btSalvar.Image = (Image)resources.GetObject("btSalvar.Image");
+            btSalvar.ImageAlign = ContentAlignment.MiddleLeft;
+            btSalvar.Location = new Point(375, 453);
+            btSalvar.Name = "btSalvar";
+            btSalvar.Size = new Size(81, 36);
+            btSalvar.TabIndex = 12;
+            btSalvar.Text = "Salvar";
+            btSalvar.TextAlign = ContentAlignment.MiddleRight;
+            btSalvar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btSalvar.UseVisualStyleBackColor = false;
+            btSalvar.Click += button1_Click;
             // 
             // FrmCadastroClientes
             // 
@@ -282,7 +282,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(474, 501);
-            Controls.Add(button1);
+            Controls.Add(btSalvar);
             Controls.Add(textBoxObs);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
@@ -327,7 +327,7 @@
         private RadioButton OpCPF;
         private MaskedTextBox textBoxDocumento;
         private MaskedTextBox textBoxTelefone;
-        private Button button1;
+        private Button btSalvar;
         private Label label3;
         private TextBox textBoxCodigo;
         private RadioButton OpCNPJ;

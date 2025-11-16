@@ -54,6 +54,11 @@ namespace Marmoraria
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SalvarCliente();
+        }
+
+        private void SalvarCliente()
+        {
             using (MySqlConnection Conexao = new MySqlConnection("Server=127.0.0.1,Port=3306;Database=banco_de_dados_marmoraria;User=root;Password=486520"))
 
             {
@@ -67,16 +72,17 @@ namespace Marmoraria
                     if (textBoxNumero.Text == "")
                     {
                         num = 0;
-                    } else
-                    {
-                        num =int.Parse(textBoxNumero.Text);
                     }
-                    
+                    else
+                    {
+                        num = int.Parse(textBoxNumero.Text);
+                    }
+
                     cmd.Parameters.AddWithValue("@nome", textBoxNome.Text);
                     cmd.Parameters.AddWithValue("@telefone", textBoxTelefone.Text);
                     cmd.Parameters.AddWithValue("@documento", textBoxDocumento.Text);
-                    cmd.Parameters.AddWithValue("@rua", num);
-                    cmd.Parameters.AddWithValue("@numero", textBoxNumero.Text);
+                    cmd.Parameters.AddWithValue("@rua", textBoxRua.Text);
+                    cmd.Parameters.AddWithValue("@numero", num);
                     cmd.Parameters.AddWithValue("@bairro", textBoxBairro.Text);
                     cmd.Parameters.AddWithValue("@cidade", textBoxCidade.Text);
                     cmd.Parameters.AddWithValue("@observacoes", textBoxObs.Text);
