@@ -53,8 +53,12 @@ namespace Marmoraria
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            SalvarCliente();
+        {   
+            if(isValido() == true)
+            {
+                return;
+            }
+                SalvarCliente();
         }
 
         private void SalvarCliente()
@@ -89,8 +93,24 @@ namespace Marmoraria
 
                     cmd.ExecuteNonQuery();
                 }
-                // MessageBox.Show("Ok");
+                MessageBox.Show("Cliente salvo com sucesso!");
             }
+
+
+        }
+
+        private bool isValido()
+        {
+            // Validações
+            if (textBoxNome.Text == "")
+            {
+                MessageBox.Show("Campo nome é obrigaório");
+                textBoxNome.Focus();
+                return true;
+            }
+
+
+            return false;
         }
     }
 }
